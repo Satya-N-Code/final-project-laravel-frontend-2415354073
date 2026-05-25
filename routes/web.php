@@ -19,4 +19,8 @@ Route::put('/services/{id}', [ServiceController::class, 'update'])->name('servic
 Route::patch('/services/{id}/status', [ServiceController::class, 'updateStatus'])->name('services.updateStatus');
 Route::delete('/services/{id}', [ServiceController::class, 'destroy'])->name('services.destroy');
 
-Route::get('/subscriptions', [SubscriptionController::class, 'index']);
+Route::get('/subscriptions', [SubscriptionController::class, 'index'])->name('subscriptions.index');
+Route::post('/subscriptions', [SubscriptionController::class, 'store'])->name('subscriptions.store');
+Route::put('/subscriptions/{id}', [SubscriptionController::class, 'update'])->name('subscriptions.update');
+Route::patch('/subscriptions/{id}/status', [SubscriptionController::class, 'updateStatus'])->name('subscriptions.updateStatus');
+Route::delete('/subscriptions/{id}', [SubscriptionController::class, 'destroy'])->name('subscriptions.destroy');
